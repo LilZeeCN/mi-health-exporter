@@ -18,8 +18,8 @@ spec = importlib.util.spec_from_file_location(
 )
 sync = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(sync)
-TIMESTAMP = 1759021500
-DAY = 1759017600  # Date label 2025-09-28 at UTC midnight.
+TIMESTAMP = 1893459900  # Fictional 2030-01-01 09:05 UTC+8.
+DAY = 1893456000  # Date label 2030-01-01 at UTC midnight.
 
 
 class FakeClient:
@@ -101,9 +101,9 @@ class ExportTests(unittest.TestCase):
     def test_utc_timestamp_is_not_shifted_by_sixteen_hours(self):
         sync.sync_from_cloud(FakeClient())
         sync.export_all_csvs()
-        self.assertEqual(self.read_csv("hr_raw.csv")[0]["datetime"], "2025-09-28 09:05:00")
-        self.assertEqual(self.read_csv("steps_daily.csv")[0]["date"], "2025-09-28")
-        self.assertEqual(self.read_csv("sleep_daily.csv")[0]["wakeup"], "2025-09-28 08:05")
+        self.assertEqual(self.read_csv("hr_raw.csv")[0]["datetime"], "2030-01-01 09:05:00")
+        self.assertEqual(self.read_csv("steps_daily.csv")[0]["date"], "2030-01-01")
+        self.assertEqual(self.read_csv("sleep_daily.csv")[0]["wakeup"], "2030-01-01 08:05")
 
     def test_repeated_sync_does_not_duplicate_rows(self):
         client = FakeClient()

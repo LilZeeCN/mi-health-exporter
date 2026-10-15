@@ -69,9 +69,11 @@ analysis/hearing_health.csv
 from datetime import datetime, timedelta, timezone
 
 beijing = timezone(timedelta(hours=8))
-print(datetime.fromtimestamp(1759021500, beijing))
-# 2025-09-28 09:05:00+08:00
+print(datetime.fromtimestamp(1893459900, beijing))
+# 2030-01-01 09:05:00+08:00
 ```
+
+上面使用的是虚构日期的演示值，不对应作者的原始健康记录。
 
 导出时直接使用 `time` 并指定时区。将 `timeIn0Tz` 当成 UTC 会多偏移 8 小时；在它上面再手动加 8 小时、再按北京时间格式化，才会比正确结果多偏移 16 小时。不要把“UTC 转北京时间”本身当成 Bug。
 
