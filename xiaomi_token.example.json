@@ -1,0 +1,7 @@
+{
+  "userId": "YOUR_XIAOMI_USER_ID",
+  "cUserId": "YOUR_C_USER_ID",
+  "serviceToken": "YOUR_MIOTHEALTH_SERVICE_TOKEN",
+  "ssecurity": "YOUR_SSECURITY_BASE64_KEY",
+  "sid": "miothealth"
+}
