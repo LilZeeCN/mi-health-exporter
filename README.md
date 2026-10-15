@@ -1,5 +1,7 @@
 # Mi Health Exporter
 
+![AI 说我凌晨心率 198，结果是 +16h 的时间戳 Bug](assets/x-article-cover.png)
+
 把小米运动健康同步到本地 SQLite 和 CSV，再交给你选择的分析工具。
 
 **纯 Python 标准库 · 无需 Root · 云端同步无需 USB · MIT**
